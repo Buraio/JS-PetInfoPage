@@ -1,1 +1,18 @@
-/* Desenvolva a estilização da sua página aqui */
+.imgDiv {
+  flex-direction: row;
+  position: relative;
+}
+
+.img1 {
+  align-self: flex-start;
+}
+
+.img3 {
+  position: absolute;
+  left: 0;
+  top: 56%;
+}
+
+.img4 {
+  position: static;
+}

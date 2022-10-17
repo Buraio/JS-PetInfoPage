@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +7,11 @@
 }
 
 :root {
-  --brand100: "hsl(230, 57%, 50%)";
+  --brand100: hsl(230, 57%, 50%);
   --brand200: "hsl(230, 68%, 54%)";
   --gray100: "hsl(210, 11%, 15%)";
   --gray200: "hsl(210, 10%, 23%)";
-  --gray300: "hsl(210, 9%, 31%)";
+  --gray300: hsl(210, 9%, 31%);
   --gray400: "hsl(210, 7%, 56%)";
   --gray500: "hsl(210, 11%, 71%)";
   --gray600: "hsl(210, 16%, 93%)";
@@ -22,5 +24,6 @@
 }
 
 body {
-  font-family: "Inter, sans-serif";
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
 }

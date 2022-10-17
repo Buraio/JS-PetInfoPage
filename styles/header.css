@@ -1,0 +1,36 @@
+.hContainer {
+  max-width: 320px;
+}
+
+.hContainer > h1 {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.hContainer > h2 {
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--brand100);
+}
+
+.hContainer > p {
+  color: var(--gray300);
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.imgDiv {
+  display: flex;
+  gap: 18px;
+}
+
+.img2, .img3 {
+  height: 92px;
+  align-self: flex-start;
+}
+
+.img4 {
+  align-self: flex-end;
+  position: relative;
+  left: -65%;
+}

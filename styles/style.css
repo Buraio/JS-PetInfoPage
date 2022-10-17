@@ -1,9 +1,89 @@
 body {
   width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hContainer > h1, .hContainer > h2, .hContainer > p, .imgDiv {
+  margin: 24px 0;
+}
+
+.containerDiv, .inputLabel, .dataInput, .submit, .goBackTo {
+  width: 100%;
+}
+
+.registerForm, .formHeader > button, .dataInput, .submit, .goBackTo {
+  border-radius: 4px;
+}
+
+.submit, .goBackTo {
+  height: 38px;
+}
+
+.formHeader > button, .dataInput, .goBackTo {
+  border: 1px solid #E9ECEF;
+}
+
+.formHeader > button, .dataInput, .submit, .goBackTo {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+.formHeader > button, .submit, .goBackTo {
+  font-weight: 500;
 }
 
 .containerDiv {
-  width: 100%;
-  max-width: 1000px;
+  max-width: 810px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registerForm {
+  width: 380px;
+  padding: 45px 24px;
+  border: 1px solid #D9D9D9;
+}
+
+
+.formHeader > h3 {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+
+
+
+.formHeader > button {
+  padding: 5px 8px;
+  background-color: #fff;
+}
+
+.inputLabel {
+  display: inline-block;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.dataInput {
+  height: 44px;
+  margin-top: 12px;
+  padding: 0 16px;
+  display: block;
+  background: #F8F9FA;
+}
+
+.submit {
+  background: #364FC7;
+  color: #fff;
+  border: 1px solid #364FC7;
+}
+
+.goBackTo {
+  margin-top: 20px;
+  background-color: var(--gray900);
 }
