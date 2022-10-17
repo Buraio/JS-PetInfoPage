@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal de post aberto</title>
+</head>
+<body>
+
+  <!-- Base -->
+  <!-- 
+    <div class="modalContainer">
+      <div class="modalMain">
+
+      </div>
+    </div>
+   -->
+
+   <!-- Abrir publicação -->
+  <div class="modalContainer">
+    <div class="modalMain">
+      <div class="pubHeader">
+        <div class="pubInfo">
+          <img class="userImg pubImg" src="" alt="">
+          <span class="userName">Samuel Leão</span>
+          <span class="verticalLine"></span>
+          <span class="pubDate">Outubro de 2022</span>
+        </div>
+        <button class="modalClose">X</button>
+      </div>
+      <h2 class="pubHeading">Outubro Rosa: Detalhes sobre a importância da prevenção do câncer de mama em cadelas e gatas</h2>
+      <p class="pubDescription">Assim como em humanos, cadelas e gatas também podem desenvolver câncer de mama. Ainda hoje, para ambas as espécies, o câncer de mama tem maior incidência. Mesmo com a evolução da medicina veterinária e da oncologia...</p>
+    </div>
+  </div>
+
+  <!-- Editar puclicação -->
+  <div class="modalContainer">
+    <div class="modalMain">
+      <div class="pubHeader">
+        <h3>Editar</h3>
+        <button class="modalClose">X</button>
+      </div>
+      <label for="">Título do post
+        <input type="text" placeholder="Escreva o título do seu post aqui">
+      </label>
+      <label for="">Conteúdo do post
+        <textarea name="" id="" cols="30" rows="10" placeholder="Escreva o conteúdo do seu post aqui"></textarea>
+      </label>
+
+      <div class="buttonAlign">
+        <button class="modalActions cancel">Cancelar</button>
+        <button class="modalActions savePost">Salvar Alterações</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Criar nova publicação -->
+  <div class="modalContainer">
+    <div class="modalMain">
+      <div class="pubHeader">
+        <h3>Criar novo post</h3>
+        <button class="modalClose">X</button>
+      </div>
+      <label for="">Título do post
+        <input type="text" placeholder="Escreva o título do seu post aqui">
+      </label>
+      <label for="">Conteúdo do post
+        <textarea name="" id="" cols="30" rows="10" placeholder="Escreva o conteúdo do seu post aqui"></textarea>
+      </label>
+
+      <div class="buttonAlign">
+        <button class="modalActions cancel">Cancelar</button>
+        <button class="modalActions savePost">Publicar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deletar publicação -->
+  <div class="modalContainer">
+    <div class="modalMain">
+      <div class="pubHeader">
+        <h3>Confirmação de exclusão</h3>
+        <button class="modalClose">X</button>
+      </div>
+      <h4>Tem certeza que deseja excluir esse post?</h4>
+      <p>Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir</p>
+
+      <button class="modalActions cancel">Cancelar</button>
+      <button class="modalActions savePost">Sim, excluir esse post</button>
+    </div>
+  </div>
+
+</body>
+</html>
