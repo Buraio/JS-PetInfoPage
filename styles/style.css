@@ -1,6 +1,5 @@
+/* Contâiner e espaçamento */
 body {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -9,36 +8,64 @@ body {
   margin: 24px 0;
 }
 
-.containerDiv, .inputLabel, .dataInput, .submit, .goBackTo {
+.containerDiv, .inputLabel, .dataInput, .submit, .goBackTo, .modalContainer {
   width: 100%;
 }
 
-.registerForm, .formHeader > button, .dataInput, .submit, .goBackTo {
-  border-radius: 4px;
+.submit, .goBackTo, .createPub {
+  height: 38px;
 }
 
-.submit, .goBackTo {
-  height: 38px;
+/* Cores */
+.submit, .createPub, .savePost {
+  background-color: var(--brand100);
+  color: var(--gray900);
+}
+
+.hContainer h2, .hContainer > h2 > span {
+  color: var(--brand100)
+}
+
+.formHeader > button, .goBackTo, .modalMain {
+  background-color: var(--gray900);
+}
+
+/* Borda e cursor */
+.submit, .createPub, .savePost, .modalClose {
+  border: none;
+}
+
+.registerForm, .formHeader > button, .dataInput, .submit, .goBackTo, .createPub, .modalClose, .tooltipDiv {
+  border-radius: 4px;
 }
 
 .formHeader > button, .dataInput, .goBackTo {
   border: 1px solid #E9ECEF;
 }
 
-.formHeader > button, .dataInput, .submit, .goBackTo {
+/* Fonte e texto */
+.formHeader > button, .dataInput, .submit, .goBackTo, .createPub {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
 }
 
-.formHeader > button, .submit, .goBackTo {
+.registerForm h3, .formHeader > button, .submit, .goBackTo, .createPub, .accountQuestion > span, .hContainer > h1 {
   font-weight: 500;
 }
 
+.accountQuestion > p, .hContainer > p, .pubDescription {
+  line-height: 150%;
+}
+
+/* Display */
+.containerDiv, .pubHeader, .formHeader, .imgDiv, .modalContainer {
+  display: flex;
+}
+
+/* Estilo geral */
 .containerDiv {
   max-width: 810px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
 }
@@ -49,18 +76,12 @@ body {
   border: 1px solid #D9D9D9;
 }
 
-
-.formHeader > h3 {
-  font-weight: 500;
+.registerForm h3 {
   font-size: 22px;
 }
 
-
-
-
 .formHeader > button {
   padding: 5px 8px;
-  background-color: #fff;
 }
 
 .inputLabel {
@@ -77,13 +98,38 @@ body {
   background: #F8F9FA;
 }
 
-.submit {
-  background: #364FC7;
-  color: #fff;
-  border: 1px solid #364FC7;
-}
-
 .goBackTo {
   margin-top: 20px;
-  background-color: var(--gray900);
+}
+
+.hContainer > p {
+  color: var(--gray300);
+  font-weight: 400;
+}
+
+.imgDiv {
+  position: relative;
+  gap: 18px;
+}
+
+.pubHeader {
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.pubInfo {
+  line-height: 200%;
+}
+
+.verticalLine {
+  margin: 0 8px;
+  color: var(--gray600)
+}
+
+.pubDate {
+  color: var(--gray400)
+}
+
+.pubDescription {
+  margin: 20px 0;
 }

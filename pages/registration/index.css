@@ -1,16 +1,34 @@
-/* Contâiner e espaçamento */
-
-/* Cores */
-
-/* Fonte e texto */
-
-/* Borda e cursor */
-
-/* Display */
-
-
+.containerDiv {
+  flex-direction: row-reverse;
+}
 
 .formHeader {
-  display: flex;
+  margin-bottom: 6px;
   justify-content: space-between;
+  align-items: center;
+}
+
+.hContainer {
+  max-width: 320px;
+}
+
+.hContainer > h1 {
+  font-size: 32px;
+}
+
+.hContainer > h2 {
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--brand100);
+}
+
+.img2, .img3 {
+  height: 92px;
+  align-self: flex-start;
+}
+
+.img4 {
+  align-self: flex-end;
+  position: relative;
+  left: -65%;
 }
