@@ -7,10 +7,16 @@ body {
 }
 
 .feedDiv {
-  width: 50%;
+  width: 100vw;
   height: 100px;
   margin-bottom: 30px;
   background-color: var(--gray800);
+  justify-content: center;
+  align-items: center;
+}
+
+.feedDiv > h2 {
+  width: 810px;
 }
 
 .hContainer {
@@ -23,6 +29,12 @@ body {
   font-size: 24px;
 }
 
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .createPub {
   padding: 0 16px;
   color: #fff;
@@ -31,4 +43,35 @@ body {
 .publication {
   margin-bottom: 64px;
   list-style: none;
+}
+
+.pubInfo {
+  display: flex;
+  gap: 8px;
+}
+
+.pubUserActions {
+  display: flex;
+  gap: 12px;
+}
+
+.action {
+  height: 32px;
+  padding: 0 8px;
+  font-size: 14px;
+}
+
+.delete {
+  background-color: var(--gray700);
+  color: var(--gray400)
+}
+
+.userImg {
+  width: 100%;
+  max-width: 40px;
+  border-radius: 50%;
+}
+
+.pubImg {
+  max-width: 32px;
 }
