@@ -7,14 +7,13 @@ const urls = {
   login: 'http://localhost:3333/login',
   createPost: 'http://localhost:3333/posts/create',
   allPosts: 'http://localhost:3333/posts',
-
-  //A verificar
-  updatePost: 'http://localhost:3333/posts/ee9141ab-43fb-403d-ba53-520b0b2eb31a',
-  deletePost: 'http://localhost:3333/posts/632ddab1-2d5a-4533-9b82-a846fe12f2b2'
+  getProfile: 'http://localhost:3333/users/profile',
+  updatePost: 'http://localhost:3333/posts/',
+  deletePost: 'http://localhost:3333/posts/'
 
 }
 
-async function getApi(body, url, method) {
+async function accountWithApi(body, url, method) {
 
   try {
 
@@ -24,8 +23,12 @@ async function getApi(body, url, method) {
       body: JSON.stringify(body)
     })
 
-    const response = await request.json();
-    return response;
+    const beforeResponse = request;
+    console.log(beforeResponse)
+    if (beforeResponse.ok) {
+      const response = await request.json();
+      return response;
+    }
 
   }
   catch (err) {
@@ -34,4 +37,38 @@ async function getApi(body, url, method) {
 
 }
 
-export { urls, getApi};
+async function homePageWithApi(url, method, localStorage) {
+
+  try {
+
+    const request = await fetch(url, {
+      method: method,
+      headers: {
+        header,
+        'Authorization': `Bearer ${localStorage.token}`
+      },
+    })
+
+    const response = request;
+    console.log(response)
+
+    if (response) {
+      const result = await request.json();
+      console.log(result)
+      return result;
+    }
+
+  }
+  catch (err) {
+    console.log(err);
+  }
+
+}
+
+homePageWithApi(urls.getProfile, 'GET', {token: 
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjYzNzM5ODAsImV4cCI6MTY5NzkwOTk4MCwic3ViIjoiYTdiMjcyMWQtOGI4Zi00YzljLWE3OGItZjY2ZTMyOWZlMmM0In0.nrf7M1Eugalp1k1-ZOxflW-_ByE7Wudi5UBC57EY9D8"})
+
+homePageWithApi(urls.allPosts, 'GET', {token: 
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjYzNzM5ODAsImV4cCI6MTY5NzkwOTk4MCwic3ViIjoiYTdiMjcyMWQtOGI4Zi00YzljLWE3OGItZjY2ZTMyOWZlMmM0In0.nrf7M1Eugalp1k1-ZOxflW-_ByE7Wudi5UBC57EY9D8"})
+
+export { urls, accountWithApi, homePageWithApi };

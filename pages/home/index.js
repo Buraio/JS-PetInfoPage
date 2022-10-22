@@ -1,33 +1,11 @@
-const body = document.body;
+import { dynamicModal } from "../../scripts/modal.js";
+import { urls, homePageWithApi } from "../../scripts/api.js";
+const token = JSON.parse(localStorage.getItem('token'));
+console.log(token);
+
+// dynamicModal();
+
 const postList = document.querySelector('#postList');
-
-function dynamicModal() {
-
-  const modalContainer = document.createElement('div');
-  const modalMain      = document.createElement('div');
-  const closeModalBtn  = document.createElement('button');
-
-  modalContainer.classList.add('modalContainer');
-  modalMain.classList.add('modalMain');
-  closeModalBtn.classList.add('modalClose');
-
-  closeModalBtn.innerText = 'X';
-
-  modalMain.appendChild(closeModalBtn);
-  modalContainer.appendChild(modalMain);
-  body.appendChild(modalContainer);
-  body.classList.add('noScroll');
-
-  closeModalBtn.addEventListener('click', () => {
-
-    modalContainer.remove();
-    body.classList.remove('noScroll');
-
-  })
-
-}
-
-dynamicModal()
 
 function createNewPost() {
 
@@ -64,8 +42,22 @@ function createNewPost() {
 
   postHeader.append(postInfo, postActions);
   post.append(postHeader, postHeading, postDesc, accessPostBtn);
-  postList.appendChild(post);
+
+  console.log(post)
+  return post;
 
 }
 
-createNewPost()
+async function renderPost() {
+
+  postList.innerHTML = '';
+  const postArr = await homePageWithApi(urls.allPosts, 'GET', {token});
+  console.log(postArr)
+  postArr.forEach(() => {
+    const returnPost = createNewPost();
+    postList.appendChild(returnPost);
+  })
+
+}
+
+renderPost();

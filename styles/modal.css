@@ -44,11 +44,11 @@
 }
 
 .show {
-  animation: display 0.5s infinite;
+  animation: display 0.5s;
 }
 
 .hide {
-  animation: goBack 0.5s infinite;
+  animation: goBack 0.5s;
 }
 
 /* Mudanças de estilo */

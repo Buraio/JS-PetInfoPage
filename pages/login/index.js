@@ -1,5 +1,5 @@
 import { getInputs, form, redirect } from '../../scripts/input.js';
-import { urls, getApi } from '../../scripts/api.js';
+import { urls, accountWithApi } from '../../scripts/api.js';
 
 const registerPageHref = '../../../pages/registration/index.html';
 const redirectInput = document.querySelector('.goBackTo');
@@ -16,9 +16,13 @@ async function loginInputValues() {
       password: `${input2.value}`,
     }
 
-    const token = await getApi(userBodyData, urls.login, 'POST');
+    const token = await accountWithApi(userBodyData, urls.login, 'POST');
     console.log(token);
-    return token;
+
+    localStorage.setItem('token', JSON.stringify(token));
+    setTimeout(() => {
+      location.replace('/pages/home/index.html');
+    }, 1000);
   })
 
 }
