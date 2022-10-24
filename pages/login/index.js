@@ -1,16 +1,16 @@
-import { getInputs, form, redirect, validateBtn } from '../../scripts/input.js';
+import { getInputs, form, redirect, submit, animateSubmit } from '../../scripts/input.js';
 import { urls, accountWithApi } from '../../scripts/api.js';
 
 const registerPageHref = '../../../pages/registration/index.html';
 const redirectInput = document.querySelector('.goBackTo');
 redirect(redirectInput, registerPageHref);
 
+const [input1, input2] = getInputs('INPUT');
 async function loginInputValues() {
-
-  const [input1, input2] = getInputs('INPUT');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    animateSubmit();
     const userBodyData = {
       email: `${input1.value}`,
       password: `${input2.value}`,
@@ -21,30 +21,22 @@ async function loginInputValues() {
 
     localStorage.setItem('token', JSON.stringify(token));
     setTimeout(() => {
+      submit.innerHTML = '';
+      submit.innerText = 'Acessar';
       location.replace('/pages/home/index.html');
-    }, 1000);
+    }, 500);
   })
 
+  getInputs('INPUT').forEach(input => {
+    input.addEventListener('input', check);
+  });
 }
 
 loginInputValues()
 
-const email = document.querySelector('#loginEmail');
-const password = document.querySelector('#loginPassword');
-const submit = document.querySelector('.submit');
-
-function loginValidateBtn() {
-
-  email.addEventListener('input', check);
-  password.addEventListener('input', check);
-
-}
-
-loginValidateBtn()
-
 function check() {
 
-  if (email.value !== '' && password.value !== '') {
+  if (input1.value !== '' && input2.value !== '') {
     submit.disabled = false;
   }
   else {

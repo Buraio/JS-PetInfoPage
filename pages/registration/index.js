@@ -43,7 +43,7 @@ Deletar post - Modal
 Animação de botão spinner de carregamento - Login/Cadastro/Modal/API
 */
 
-import { getInputs, form, redirect } from '../../scripts/input.js';
+import { getInputs, form, redirect, submit, animateSubmit } from '../../scripts/input.js';
 import { urls, accountWithApi } from '../../scripts/api.js';
 import { showTooltip } from '../../scripts/modal.js';
 
@@ -52,12 +52,13 @@ const redirectInput = document.querySelectorAll('.goBackTo');
 
 redirectInput.forEach(button => redirect(button, loginPageHref));
 
-async function registerInputValues() {
+const [input1, input2, input3, input4] = getInputs('INPUT');
 
-  const [input1, input2, input3, input4] = getInputs('INPUT');
+async function registerInputValues() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    animateSubmit();
     const userBodyData = {
       username: `${input1.value}`,
       email:    `${input2.value}`,
@@ -67,13 +68,31 @@ async function registerInputValues() {
 
     const response = await accountWithApi(userBodyData, urls.register, 'POST');
     if (response) {
-
       setTimeout(() => {
         showTooltip();
-      }, 1000)
+      }, 500)
     }
+    setTimeout(() => {
+      submit.innerHTML = '';
+      submit.innerText = 'Cadastrar'
+    }, 500)
   })
+
+  getInputs('INPUT').forEach(input => {
+    input.addEventListener('input', check);
+  });
 
 }
 
 registerInputValues();
+
+function check() {
+
+  if (input1.value && input2.value && input3.value && input4.value) {
+    submit.disabled = false;
+  }
+  else {
+    submit.disabled = true;
+  }
+
+}

@@ -1,4 +1,5 @@
 const form = document.querySelector('.registerForm');
+const submit = document.querySelector('.submit');
 
 function getInputs(inputName) {
 
@@ -22,13 +23,14 @@ function redirect(button, href) {
 
 }
 
-function validateBtn() {
+function animateSubmit() {
 
-
-  const submitBtn = document.querySelector('.submit');
-  submitBtn.disabled = false;
-  
+  const animImg = document.createElement('img');
+  animImg.src = '/pages/assets/icons/spinner.png'
+  animImg.classList.add('loader');
+  submit.innerHTML = '';
+  submit.append(animImg);
 
 }
 
-export { getInputs, form, redirect, validateBtn };
+export { getInputs, form, redirect, submit, animateSubmit };
