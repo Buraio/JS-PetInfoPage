@@ -1,6 +1,4 @@
-const searchEndpoint = 'users/createhttp://localhost:3333/users/profile/';
 const header = {'Content-Type': 'application/json'};
-
 const urls = {
 
   register: 'http://localhost:3333/users/create',

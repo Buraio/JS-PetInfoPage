@@ -1,4 +1,4 @@
-import { getInputs, form, redirect } from '../../scripts/input.js';
+import { getInputs, form, redirect, validateBtn } from '../../scripts/input.js';
 import { urls, accountWithApi } from '../../scripts/api.js';
 
 const registerPageHref = '../../../pages/registration/index.html';
@@ -29,3 +29,26 @@ async function loginInputValues() {
 
 loginInputValues()
 
+const email = document.querySelector('#loginEmail');
+const password = document.querySelector('#loginPassword');
+const submit = document.querySelector('.submit');
+
+function loginValidateBtn() {
+
+  email.addEventListener('input', check);
+  password.addEventListener('input', check);
+
+}
+
+loginValidateBtn()
+
+function check() {
+
+  if (email.value !== '' && password.value !== '') {
+    submit.disabled = false;
+  }
+  else {
+    submit.disabled = true;
+  }
+
+}

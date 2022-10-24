@@ -22,4 +22,13 @@ function redirect(button, href) {
 
 }
 
-export { getInputs, form, redirect };
+function validateBtn() {
+
+
+  const submitBtn = document.querySelector('.submit');
+  submitBtn.disabled = false;
+  
+
+}
+
+export { getInputs, form, redirect, validateBtn };
