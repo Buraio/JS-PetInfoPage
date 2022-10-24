@@ -1,8 +1,12 @@
 import { dynamicModal } from "../../scripts/modal.js";
 import { urls, homePageWithApi } from "../../scripts/api.js";
 const token = JSON.parse(localStorage.getItem('token')).token;
+const userObj = await homePageWithApi(urls.getProfile, 'GET', token);
+console.log(userObj)
+const userImg = document.querySelector('.userImg');
+userImg.src = userObj.avatar;
 
-// dynamicModal();
+dynamicModal();
 
 const postList = document.querySelector('#postList');
 
@@ -11,6 +15,7 @@ function createNewPost(postObj) {
   const post          = document.createElement('li');
   const postHeader    = document.createElement('div');
   const postInfo      = document.createElement('div');
+  const userName      = document.createElement('span');
   const postActions   = document.createElement('div');
   const postHeading   = document.createElement('h2');
   const postDesc      = document.createElement('p');
@@ -27,23 +32,29 @@ function createNewPost(postObj) {
 
   accessPostBtn.classList.add('accessPost');
 
+  userName.innerText = postObj.user.username;
+
   postInfo.insertAdjacentHTML('afterbegin', `
     <img class="userImg postImg" src="${postObj.user.avatar}">
-    <span class="userName">${postObj.user.username}</span>
+    ${userName.innerText}
     <span class="verticalLine">|</span>
     <span class="postDate">${postObj.createdAt}</span>
-  `)
-
-  postActions.insertAdjacentHTML('beforeend', `
-    <button class="action edit">Editar</button>
-    <button class="action delete">Excluir</button>
   `)
 
   postHeading.innerText = `${postObj.title}`;
   postDesc.innerText = `${postObj.content}`;
   accessPostBtn.innerText = 'Acessar publicação';
 
-  postHeader.append(postInfo, postActions);
+  postHeader.appendChild(postInfo);
+
+  if (userName.innerText === userObj.username) {
+    postActions.insertAdjacentHTML('beforeend', `
+      <button class="action edit">Editar</button>
+      <button class="action delete">Excluir</button>
+    `)
+    postHeader.appendChild(postActions);
+  }
+
   post.append(postHeader, postHeading, postDesc, accessPostBtn);
 
   console.log(post)

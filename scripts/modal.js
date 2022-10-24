@@ -24,8 +24,6 @@ function dynamicModal() {
 
   closeModalBtn.innerText = 'X';
 
-  modalMain.appendChild(closeModalBtn);
-  modalContainer.appendChild(modalMain);
   body.appendChild(modalContainer);
   body.classList.add('noScroll');
 
@@ -35,6 +33,25 @@ function dynamicModal() {
     body.classList.remove('noScroll');
 
   })
+
+  modalContainer.appendChild(modalMain);
+
+}
+
+function deletePostModal() {
+
+  const postHeader   = document.createElement('div');
+  const heading      = document.createElement('h3');
+  const question     = document.createElement('h4');
+  const deleteDesc   = document.createElement('p');
+  const cancelAction = document.createElement('button');
+  const deleteAction = document.createElement('button');
+
+  heading.innerText = 'Confirmação de exclusão';
+  question.innerText = 'Tem certeza que deseja excluir esse post?';
+  deleteDesc.innerText = 'Esta ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir';
+  cancelAction.innerText = 'Cancelar';
+  deleteAction.innerText = 'Sim, excluir esse post';
 
 }
 
