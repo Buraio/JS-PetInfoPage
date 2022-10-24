@@ -12,30 +12,30 @@ body {
   width: 100%;
 }
 
-.submit, .goBackTo, .createPub {
+.submit, .goBackTo, .createPost {
   height: 38px;
 }
 
 /* Cores */
-.submit, .createPub, .savePost {
+.submit, .createPost, .savePost {
   background-color: var(--brand100);
   color: var(--gray900);
 }
 
-.hContainer h2, .hContainer > h2 > span, .accessPub {
+.hContainer h2, .hContainer > h2 > span, .accessPost {
   color: var(--brand100)
 }
 
-.formHeader > button, .goBackTo, .modalMain, .edit, .accessPub {
+.formHeader > button, .goBackTo, .modalMain, .edit, .accessPost {
   background-color: var(--gray900);
 }
 
 /* Borda e cursor */
-.submit, .createPub, .savePost, .modalClose, .delete, .accessPub {
+.submit, .createPost, .savePost, .modalClose, .delete, .accessPost {
   border: none;
 }
 
-.registerForm, .formHeader > button, .dataInput, .submit, .goBackTo, .createPub, .modalClose, .tooltipDiv, .action {
+.registerForm, .formHeader > button, .dataInput, .submit, .goBackTo, .createPost, .modalClose, .tooltipDiv, .action {
   border-radius: 4px;
 }
 
@@ -44,21 +44,21 @@ body {
 }
 
 /* Fonte e texto */
-.formHeader > button, .dataInput, .submit, .goBackTo, .createPub, .action, .accessPub {
+.formHeader > button, .dataInput, .submit, .goBackTo, .createPost, .action, .accessPost {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
 }
 
-.registerForm h3, .formHeader > button, .submit, .goBackTo, .createPub, .accountQuestion > span, .hContainer > h1, .action, .accessPub {
+.registerForm h3, .formHeader > button, .submit, .goBackTo, .createPost, .accountQuestion > span, .hContainer > h1, .action, .accessPost {
   font-weight: 500;
 }
 
-.accountQuestion > p, .hContainer > p, .pubDescription {
+.accountQuestion > p, .hContainer > p, .postDescription {
   line-height: 150%;
 }
 
 /* Display */
-.containerDiv, .pubHeader, .formHeader, .imgDiv, .feedDiv, .modalContainer {
+.containerDiv, .postHeader, .formHeader, .imgDiv, .feedDiv, .modalContainer {
   display: flex;
 }
 
@@ -98,12 +98,12 @@ body {
   margin-top: 20px;
 }
 
-.pubHeader {
+.postHeader {
   margin-bottom: 25px;
   justify-content: space-between;
 }
 
-.pubInfo {
+.postInfo {
   line-height: 200%;
 }
 
@@ -111,10 +111,10 @@ body {
   color: var(--gray600)
 }
 
-.pubDate {
+.postDate {
   color: var(--gray400)
 }
 
-.pubDescription {
+.postDescription {
   margin: 20px 0;
 }

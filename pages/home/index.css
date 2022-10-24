@@ -35,22 +35,22 @@ body {
   gap: 12px;
 }
 
-.createPub {
+.createPost {
   padding: 0 16px;
   color: #fff;
 }
 
-.publication {
+.post {
   margin-bottom: 64px;
   list-style: none;
 }
 
-.pubInfo {
+.postInfo {
   display: flex;
   gap: 8px;
 }
 
-.pubUserActions {
+.postUserActions {
   display: flex;
   gap: 12px;
 }
@@ -72,6 +72,6 @@ body {
   border-radius: 50%;
 }
 
-.pubImg {
+.postImg {
   max-width: 32px;
 }

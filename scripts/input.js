@@ -4,7 +4,6 @@ const submit = document.querySelector('.submit');
 function getInputs(inputName) {
 
   const formElements = [...form.elements];
-  console.log(formElements)
 
   const inputArr = formElements.filter(element => {
     if (element.tagName === inputName) {

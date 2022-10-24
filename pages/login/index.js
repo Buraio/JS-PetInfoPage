@@ -3,6 +3,7 @@ import { urls, accountWithApi } from '../../scripts/api.js';
 
 const registerPageHref = '../../../pages/registration/index.html';
 const redirectInput = document.querySelector('.goBackTo');
+
 redirect(redirectInput, registerPageHref);
 
 const [input1, input2] = getInputs('INPUT');

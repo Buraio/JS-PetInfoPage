@@ -1,25 +1,6 @@
 /*
 Elementos interativos em variáveis - Cadastro/Login/Home/Modal/API
 
-Url e endpoints em variáveis - API - Ok
-Cadastro de conta - API - Ok
-Login e token recebido - API - Ok
-
-Evento de envio de form - Login/Cadastro - Ok
-Resgate de valores dos inputs - Login/Cadastro - Ok
-
-Evento de cadastro com API - Cadastro - Ok
-
-Evento de acesso à conta com API - Login - Ok
-
-Redirecionamento da tela de cadastro para a de login - API - Ok
-Redirecionamento da tela de login para a de feed - API - Ok
-
-Evento de retorno à tela de login - Cadastro - Ok
-Evento de redirecionamento à tela de cadastro - Login - Ok
-
-Token com localStorage - API - Ok
-
 // Pendente -----------------------------------------------
 
 Resgate de todos os posts - API
@@ -40,7 +21,6 @@ Criar novo post - Modal
 Editar post - Modal
 Deletar post - Modal
 
-Animação de botão spinner de carregamento - Login/Cadastro/Modal/API
 */
 
 import { getInputs, form, redirect, submit, animateSubmit } from '../../scripts/input.js';
@@ -53,7 +33,6 @@ const redirectInput = document.querySelectorAll('.goBackTo');
 redirectInput.forEach(button => redirect(button, loginPageHref));
 
 const [input1, input2, input3, input4] = getInputs('INPUT');
-
 async function registerInputValues() {
 
   form.addEventListener('submit', async (e) => {

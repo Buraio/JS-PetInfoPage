@@ -36,8 +36,6 @@ function dynamicModal() {
 
   })
 
-  console.log(modalContainer)
-
 }
 
 export { showTooltip, dynamicModal };
