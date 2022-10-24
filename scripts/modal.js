@@ -1,9 +1,12 @@
 function showTooltip() {
 
   const tooltipDiv = document.querySelector('.tooltipDiv');
+  const link = document.querySelector('.pageRef');
 
   tooltipDiv.classList.add('show');
   tooltipDiv.classList.remove('hidden');
+
+  link.href = '../../index.html';
 
 }
 
