@@ -3,9 +3,9 @@ Elementos interativos em variáveis - Cadastro/Login/Home/Modal/API
 
 // Pendente -----------------------------------------------
 
-Resgate de todos os posts - API
-Criação de posts - API
-Posts de outros usuários - API
+Resgate de todos os posts - API - Ok
+Criação de posts - API - Ok
+Posts de outros usuários - API - Ok
 
 Evento de sair da conta - Home
 Elementos de posts (li) com DOM - Home
@@ -60,7 +60,6 @@ async function registerInputValues() {
   getInputs('INPUT').forEach(input => {
     input.addEventListener('input', check);
   });
-
 }
 
 registerInputValues();
@@ -73,5 +72,4 @@ function check() {
   else {
     submit.disabled = true;
   }
-
 }

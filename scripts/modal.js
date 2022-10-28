@@ -1,3 +1,7 @@
+import { createPostModal, deletePostModal } from "./modalActions.js";
+
+const body = document.body;
+
 function showTooltip() {
 
   const tooltipDiv = document.querySelector('.tooltipDiv');
@@ -10,49 +14,59 @@ function showTooltip() {
 
 }
 
-const body = document.body;
-
-function dynamicModal() {
+function dynamicModal(heading, elements) {
 
   const modalContainer = document.createElement('div');
   const modalMain      = document.createElement('div');
-  const closeModalBtn  = document.createElement('button');
+  const postHeader   = document.createElement('div');
+  const button = document.createElement('button');
 
   modalContainer.classList.add('modalContainer');
-  modalMain.classList.add('modalMain');
-  closeModalBtn.classList.add('modalClose');
+  modalMain.classList.add('modalMain');  
+  postHeader.classList.add('postHeader');
+  button.classList.add('modalClose');
 
-  closeModalBtn.innerText = 'X';
-
-  body.appendChild(modalContainer);
-  body.classList.add('noScroll');
-
-  closeModalBtn.addEventListener('click', () => {
-
-    modalContainer.remove();
-    body.classList.remove('noScroll');
-
-  })
+  button.innerText = 'X';
+  closeModal(button, modalContainer);
 
   modalContainer.appendChild(modalMain);
+  postHeader.append(heading, button);
+  modalMain.append(postHeader)
+
+  body.classList.add('noScroll');
+  body.appendChild(modalContainer);
+
+  return modalMain;
 
 }
 
-function deletePostModal() {
+function closeModal(button, parent) {
+  button.addEventListener('click', () => {
+    parent.remove();
+  })
+}
 
-  const postHeader   = document.createElement('div');
-  const heading      = document.createElement('h3');
-  const question     = document.createElement('h4');
-  const deleteDesc   = document.createElement('p');
-  const cancelAction = document.createElement('button');
-  const deleteAction = document.createElement('button');
+export function accessPostModal() {
 
-  heading.innerText = 'Confirmação de exclusão';
-  question.innerText = 'Tem certeza que deseja excluir esse post?';
-  deleteDesc.innerText = 'Esta ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir';
-  cancelAction.innerText = 'Cancelar';
-  deleteAction.innerText = 'Sim, excluir esse post';
+  const createBtn    = document.querySelector('.createPost');
+  const accessBtnArr = document.querySelectorAll('.accessPost');
+  const editBtnArr   = document.querySelectorAll('.edit');
+  const deleteBtnArr = document.querySelectorAll('.delete');
 
+  console.log(createBtn)
+  createBtn.addEventListener('click', createPostModal);
+
+  console.log(accessBtnArr);
+
+
+  loopBtnArray(deleteBtnArr, deletePostModal);
+
+}
+
+function loopBtnArray(arr, callback) {
+  arr.forEach(button => {
+    button.addEventListener('click', callback);
+  })
 }
 
 export { showTooltip, dynamicModal };

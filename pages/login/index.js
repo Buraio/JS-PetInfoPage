@@ -43,5 +43,4 @@ function check() {
   else {
     submit.disabled = true;
   }
-
 }

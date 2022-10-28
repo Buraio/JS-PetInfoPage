@@ -4,7 +4,6 @@ const submit = document.querySelector('.submit');
 function getInputs(inputName) {
 
   const formElements = [...form.elements];
-
   const inputArr = formElements.filter(element => {
     if (element.tagName === inputName) {
       return element;
@@ -15,11 +14,9 @@ function getInputs(inputName) {
 }
 
 function redirect(button, href) {
-
   button.addEventListener('click', () => {
     location.replace(href);
   })
-
 }
 
 function animateSubmit() {
