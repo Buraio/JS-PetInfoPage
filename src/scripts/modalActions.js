@@ -1,5 +1,5 @@
 import { dynamicModal } from "./modal.js";
-import { token, userObj } from "../pages/homePage/index.js";
+import { token, userObj } from "../../src/pages/homepage/index.js";
 
 function createPostModal() {
 
