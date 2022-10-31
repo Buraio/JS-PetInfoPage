@@ -27,7 +27,6 @@ async function registerInputValues() {
       }, 500)
     }
     else {
-      console.log(response)
       showTooltip(response.message);
     }
     setTimeout(() => {

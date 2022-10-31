@@ -14,7 +14,6 @@ async function loginInputValues() {
     }
 
     const token = await accountWithApi(userBodyData, urls.login, 'POST');
-    console.log(token);
 
     localStorage.setItem('token', JSON.stringify(token));
     setTimeout(() => {
@@ -23,7 +22,7 @@ async function loginInputValues() {
 
       if (!token.message) {
         validateInput('ok');
-        location = '../src/pages/homepage/index.html';
+        location.replace('../src/pages/homepage/index.html');
       }
       else {
         validateInput(token.message)

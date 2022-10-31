@@ -42,10 +42,7 @@ function accessPostModal() {
   const editBtnArr   = document.querySelectorAll('.edit');
   const deleteBtnArr = document.querySelectorAll('.delete');
 
-  console.log(createBtn)
   createBtn.addEventListener('click', createPostModal);
-
-  console.log(accessBtnArr);
 
 
   loopBtnArray(deleteBtnArr, deletePostModal);

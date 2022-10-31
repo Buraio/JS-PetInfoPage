@@ -1,4 +1,3 @@
-import { urls, homePageWithApi } from "./getApi.js";
 import { dynamicModal } from "./modal.js";
 import { token, userObj } from "../pages/homePage/index.js";
 
@@ -43,7 +42,6 @@ function readPostModal() {
   const verticalLine = document.createElement('span');
   const postDate = document.createElement('span');
 
-  console.log(userObj)
   verticalLine.innerText = '|';
   postDate.innerText = userObj.date
 
