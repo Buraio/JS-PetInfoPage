@@ -1,0 +1,45 @@
+@keyframes display {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.loader{
+  animation: rotate 1s  infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+ 100%{
+  transform: rotate(360deg);
+ }
+}
+
+@keyframes spawn {
+  0% {
+    opacity: 0%;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5) translateX(50%) translateY(-50%);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.user:hover .dropdown {
+  display: inline-block;
+}

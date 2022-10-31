@@ -1,6 +1,8 @@
+import { urls, homePageWithApi } from "./getApi.js";
 import { dynamicModal } from "./modal.js";
+import { token, userObj } from "../pages/homePage/index.js";
 
-export function createPostModal() {
+function createPostModal() {
 
   const heading         = document.createElement('h3');
   const titleLabel      = document.createElement('label');
@@ -34,13 +36,26 @@ export function createPostModal() {
 
 }
 
-export function readPostModal() {
+function readPostModal() {
 
+  const postInfo = document.createElement('div');
+  const postImg = document.createElement('img');
+  const verticalLine = document.createElement('span');
+  const postDate = document.createElement('span');
 
+  console.log(userObj)
+  verticalLine.innerText = '|';
+  postDate.innerText = userObj.date
+
+  
+
+  postInfo.append(postImg, verticalLine, postDate);
 
 }
 
-export function deletePostModal() {
+readPostModal()
+
+function deletePostModal() {
 
   const heading      = document.createElement('h3');
   const question     = document.createElement('h4');
@@ -62,3 +77,5 @@ export function deletePostModal() {
   modalMain.append(question, deleteDesc, cancelAction, deleteAction);
 
 }
+
+export { userObj, token, createPostModal, readPostModal, deletePostModal }

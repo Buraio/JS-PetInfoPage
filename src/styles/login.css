@@ -14,13 +14,22 @@
   max-width: 320px;
 }
 
+.formHeader > button {
+  padding: 5px 8px;
+}
+
+.hContainer > p {
+  color: var(--gray300);
+  font-weight: 400;
+}
+
 .img1, .img2 {
   align-self: flex-start;
 }
 
 .img3 {
   position: absolute;
-  left: 0;
+  left: 0%;
   top: 56%;
 }
 
@@ -48,4 +57,22 @@
 
 .registerForm > h3 {
   margin-bottom: 6px;
+}
+
+.emailMessage {
+  margin-bottom: 6px;
+}
+
+.passwordMessage {
+  margin-bottom: 26px;
+}
+
+.emailMessage, .passwordMessage {
+  font-weight: 400;
+  color: var(--alert100);
+  animation: spawn 0.5s;
+}
+
+.error {
+  border: 1px solid var(--alert100)
 }

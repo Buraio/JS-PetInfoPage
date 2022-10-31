@@ -1,0 +1,61 @@
+.containerDiv {
+  max-width: 810px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registerForm {
+  width: 380px;
+  padding: 45px 24px;
+  border: 1px solid #D9D9D9;
+}
+
+.registerForm h3 {
+  font-size: 22px;
+}
+
+.inputLabel {
+  display: inline-block;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.dataInput {
+  height: 44px;
+  margin-top: 12px;
+  padding: 0 16px;
+  display: block;
+  background: #F8F9FA;
+}
+
+.goBackTo {
+  padding: 0 8px;
+  margin-top: 20px;
+}
+
+.postHeader {
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.postInfo {
+  line-height: 200%;
+}
+
+.verticalLine {
+  color: var(--gray600)
+}
+
+.postDate {
+  color: var(--gray400)
+}
+
+.postDescription {
+  margin: 20px 0;
+}
+
+.imgDiv {
+  position: relative;
+  gap: 18px;
+}

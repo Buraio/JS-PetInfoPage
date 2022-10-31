@@ -1,4 +1,4 @@
-const form = document.querySelector('.registerForm');
+const form   = document.querySelector('.registerForm');
 const submit = document.querySelector('.submit');
 
 function getInputs(inputName) {
@@ -15,18 +15,27 @@ function getInputs(inputName) {
 
 function redirect(button, href) {
   button.addEventListener('click', () => {
-    location.replace(href);
+    location.assign(href);
   })
 }
 
 function animateSubmit() {
 
   const animImg = document.createElement('img');
-  animImg.src = '/pages/assets/icons/spinner.png'
+  animImg.src = '../../assets/img/spinner.png'
   animImg.classList.add('loader');
   submit.innerHTML = '';
   submit.append(animImg);
 
 }
 
-export { getInputs, form, redirect, submit, animateSubmit };
+const logOut = (input, token) => {
+  input.addEventListener('click', () => {
+    location.assign('../../../index.html');
+    if (token) {
+      localStorage.removeItem('token');
+    }
+  })
+}
+
+export { getInputs, form, redirect, submit, animateSubmit, logOut };

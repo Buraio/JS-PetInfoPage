@@ -1,9 +1,50 @@
-/* Contâiner e espaçamento */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brand100: hsl(230, 57%, 50%);
+  --brand200: hsl(230, 68%, 54%);
+  --gray100: hsl(210, 11%, 15%);
+  --gray200: hsl(210, 10%, 23%);
+  --gray300: hsl(210, 9%, 31%);
+  --gray400: hsl(210, 7%, 56%);
+  --gray500: hsl(210, 11%, 71%);
+  --gray600: hsl(210, 16%, 93%);
+  --gray700: hsl(210, 17%, 95%);
+  --gray800: hsl(210, 17%, 98%);
+  --gray900: hsl(200, 100%, 99%);
+  --alert100: hsl(349, 57%, 50%);
+  --alert200: hsl(349, 69%, 55%);
+  --sucess100: hsl(162, 88%, 26%);
+}
+
+.hidden {
+  display: none;
+}
+
+.noScroll {
+  overflow-y: hidden;
+}
+
 body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  background-color: var(--gray900);
+  overflow-x: hidden;
   display: flex;
   align-items: center;
 }
 
+/* Multiple styles */
+
+/* Container and spacing */
 .hContainer > h1, .hContainer > h2, .hContainer > p, .imgDiv {
   margin: 24px 0;
 }
@@ -16,7 +57,7 @@ body {
   height: 38px;
 }
 
-/* Cores */
+/* Colors */
 .submit, .createPost, .savePost {
   background-color: var(--brand100);
   color: var(--gray900);
@@ -30,7 +71,7 @@ body {
   background-color: var(--gray900);
 }
 
-/* Borda e cursor */
+/* Border and cursor */
 .submit, .createPost, .savePost, .modalClose, .delete, .accessPost {
   border: none;
 }
@@ -43,7 +84,7 @@ body {
   border: 1px solid #E9ECEF;
 }
 
-/* Fonte e texto */
+/* Font and text */
 .formHeader > button, .dataInput, .submit, .goBackTo, .createPost, .action, .accessPost {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -60,61 +101,4 @@ body {
 /* Display */
 .containerDiv, .postHeader, .formHeader, .imgDiv, .feedDiv, .modalContainer {
   display: flex;
-}
-
-/* Estilo geral */
-.containerDiv {
-  max-width: 810px;
-  margin: 0 auto;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.registerForm {
-  width: 380px;
-  padding: 45px 24px;
-  border: 1px solid #D9D9D9;
-}
-
-.registerForm h3 {
-  font-size: 22px;
-}
-
-.inputLabel {
-  display: inline-block;
-  margin: 20px 0;
-  font-size: 18px;
-}
-
-.dataInput {
-  height: 44px;
-  margin-top: 12px;
-  padding: 0 16px;
-  display: block;
-  background: #F8F9FA;
-}
-
-.goBackTo {
-  margin-top: 20px;
-}
-
-.postHeader {
-  margin-bottom: 25px;
-  justify-content: space-between;
-}
-
-.postInfo {
-  line-height: 200%;
-}
-
-.verticalLine {
-  color: var(--gray600)
-}
-
-.postDate {
-  color: var(--gray400)
-}
-
-.postDescription {
-  margin: 20px 0;
 }

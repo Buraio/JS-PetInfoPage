@@ -5,11 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="styles/globalStyles.css">
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="./styles/header.css">
-  <link rel="stylesheet" href="./pages/login/index.css">
-  <link rel="stylesheet" href="./styles/effects.css">
+  <link rel="stylesheet" href="./src/styles/globalStyles.css">
+  <link rel="stylesheet" href="./src/styles/effects.css">
+  <link rel="stylesheet" href="./src/styles/styles.css">
+  <link rel="stylesheet" href="./src/styles/login.css">
 
   <title>Petinfo - Faça seu login</title>
 </head>
@@ -20,10 +19,10 @@
       <h2><span>Amor</span> e <span>carinho</span> por meio do conhecimento</h2>
       <p>Todas as informações para melhorar a vida do seu pet em um só lugar</p>
       <figure class="imgDiv">
-      <img src="./pages/login/img/pet1.png" alt="" class="petImg img1">
-      <img src="./pages/login/img/pet2.png" alt="" class="petImg img2">
-      <img src="./pages/login/img/pet3.png" alt="" class="petImg img3">
-      <img src="./pages/login/img/pet4.png" alt="" class="petImg img4">
+      <img src="./src/assets/img/login/pet1.png" alt="" class="petImg img1">
+      <img src="./src/assets/img/login/pet2.png" alt="" class="petImg img2">
+      <img src="./src/assets/img/login/pet3.png" alt="" class="petImg img3">
+      <img src="./src/assets/img/login/pet4.png" alt="" class="petImg img4">
       </figure>
     </header>
     <main class="mContainer">
@@ -33,11 +32,11 @@
           <label for="loginEmail" class="inputLabel">Email
             <input id="loginEmail" type="email" class="dataInput" placeholder="Digite seu email aqui">
           </label>
+          <p class="emailMessage hidden">O Email está incorreto</p>
           <label for="loginPassword" class="inputLabel">Senha
             <input id="loginPassword" type="password" class="dataInput" placeholder="Digite sua senha aqui">
           </label>
-
-          <!-- Esquema da mensagem de erro: a fazer -->
+          <p class="passwordMessage hidden">A senha está incorreta</p>
 
           <button class="submit" disabled>Acessar</button>
           <div class="accountQuestion">
@@ -49,8 +48,6 @@
         </form>
     </main>
   </div>
-  <script type="module" src="/scripts/api.js"></script>
-  <script type="module" src="/scripts/input.js"></script>
-  <script type="module" src="./pages/login/index.js"></script>
+  <script type="module" src="./src/pages/login/index.js"></script>
 </body>
 </html>

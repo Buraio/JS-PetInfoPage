@@ -2,19 +2,7 @@ import { createPostModal, deletePostModal } from "./modalActions.js";
 
 const body = document.body;
 
-function showTooltip() {
-
-  const tooltipDiv = document.querySelector('.tooltipDiv');
-  const link = document.querySelector('.pageRef');
-
-  tooltipDiv.classList.add('show');
-  tooltipDiv.classList.remove('hidden');
-
-  link.href = '../../index.html';
-
-}
-
-function dynamicModal(heading, elements) {
+function dynamicModal(heading) {
 
   const modalContainer = document.createElement('div');
   const modalMain      = document.createElement('div');
@@ -43,10 +31,11 @@ function dynamicModal(heading, elements) {
 function closeModal(button, parent) {
   button.addEventListener('click', () => {
     parent.remove();
+    body.classList.remove('noScroll');
   })
 }
 
-export function accessPostModal() {
+function accessPostModal() {
 
   const createBtn    = document.querySelector('.createPost');
   const accessBtnArr = document.querySelectorAll('.accessPost');
@@ -69,4 +58,4 @@ function loopBtnArray(arr, callback) {
   })
 }
 
-export { showTooltip, dynamicModal };
+export { dynamicModal, accessPostModal };

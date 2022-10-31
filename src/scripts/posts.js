@@ -1,5 +1,3 @@
-const postList = document.querySelector('#postList');
-
 function createNewPost(postObj) {
 
   const post          = document.createElement('li');
@@ -19,39 +17,40 @@ function createNewPost(postObj) {
   postDesc.classList.add('postDescription');
   accessPostBtn.classList.add('accessPost');
 
-  postInfo.insertAdjacentHTML('afterbegin', `
-    <img class="userImg postImg" src="${postObj.user.avatar}">
-    ${userName.innerText}
-    <span class="verticalLine">|</span>
-    <span class="postDate">${postObj.createdAt}</span>
-  `)
-
   userName.innerText = postObj.user.username;
   postHeading.innerText = `${postObj.title}`;
   postDesc.innerText = `${postObj.content}`;
   accessPostBtn.innerText = 'Acessar publicação';
 
+  post.id = postObj.id;
+  const userId = postObj.user.id;
+
+  postInfo.insertAdjacentHTML('afterbegin', `
+    <img id="${userId}" class="userImg postImg" src="${postObj.user.avatar}" >
+    <span class="postUserName">${userName.innerText}</span>
+    <span class="verticalLine">|</span>
+    <span class="postDate">${postObj.createdAt}</span>
+  `)
+
   // accessPostModal(accessPostBtn);
-  createUserActions(postActions);
+  createUserActions(postActions, userId);
   
   postHeader.appendChild(postInfo);
   postHeader.appendChild(postActions);
   post.append(postHeader, postHeading, postDesc, accessPostBtn);
 
-  console.log(post)
   return post;
 }
 
-function createUserActions(element) {
+function createUserActions(element, id) {
 
-  // if (userName.innerText === userObj.username) {
+  const userId = document.querySelector('.userImg');
+  if (id === userId.id) {
     element.insertAdjacentHTML('beforeend', `
       <button class="action edit">Editar</button>
       <button class="action delete">Excluir</button>
     `)
-    
-
-//   }
+  }
 }
 
-export { postList, createNewPost }
+export { createNewPost }
